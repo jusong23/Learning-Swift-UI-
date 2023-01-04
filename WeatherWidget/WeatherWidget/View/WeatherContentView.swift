@@ -20,9 +20,10 @@ struct WeatherContentView: View {
             GeometryReader{ reader in
                 ScrollView(showsIndicators: false) {
                     VStack {
-                        Color.red
-                        CurrentWeatherView()
-                    }
+                        Color.clear
+                    
+                        CurrentWeatherView(model: .preview)
+                     }
                     .frame(height: reader.size.height)
                     // VStack의 높이를 GeometryReader와 동일하게 고정
                     

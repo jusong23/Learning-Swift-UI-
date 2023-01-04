@@ -112,9 +112,9 @@
 			isa = PBXGroup;
 			children = (
 				758960272964FDFA00E8CD28 /* MainView.swift */,
-				7589603329654A7C00E8CD28 /* CurrentWeatherView.swift */,
-				758960312965470300E8CD28 /* WeatherContentView.swift */,
 				7589602F296546AF00E8CD28 /* BackgroundView.swift */,
+				758960312965470300E8CD28 /* WeatherContentView.swift */,
+				7589603329654A7C00E8CD28 /* CurrentWeatherView.swift */,
 				7589603529654AD200E8CD28 /* ForecastView.swift */,
 			);
 			path = View;
