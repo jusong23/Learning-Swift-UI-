@@ -14,6 +14,7 @@ struct Forecast: Identifiable {
     let time: String
     let icon: String
     let weather: String
+    let temperature: String
     let maxTemperature: String
     let minTemperature: String
     let surise: String
@@ -28,7 +29,7 @@ extension Forecast {
         return (0..<10).map {
             let dt = Date.now.addingTimeInterval(TimeInterval($0 * 3600 * 24))
             
-            return Forecast(date: dt.formatted(.dateTime.month().day()), time: dt.formatted(.dateTime.month().minute()), icon: "sun.max.fill", weather: "맑음", maxTemperature: Double.randomTemperatureString, minTemperature: Double.randomTemperatureString, surise: Double.randomTemperatureString, forecastedDate: .now)
+            return Forecast(date: dt.formatted(.dateTime.month().day()), time: dt.formatted(.dateTime.month().minute()), icon: "sun.max.fill", weather: "맑음", temperature: Double.randomTemperatureString, maxTemperature: Double.randomTemperatureString, minTemperature: Double.randomTemperatureString, surise: Double.randomTemperatureString, forecastedDate: .now)
         }
     }
     // 배열형의 '타입 프로퍼티'를 선언하고 인스턴스를 고정값으로 채워서 리턴
