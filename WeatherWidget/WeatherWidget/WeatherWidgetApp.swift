@@ -12,6 +12,7 @@ struct WeatherWidgetApp: App {
     var body: some Scene {
         WindowGroup {
             MainView()
+                .preferredColorScheme(.dark)
         }
     }
 }
