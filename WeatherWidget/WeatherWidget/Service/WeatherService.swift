@@ -10,6 +10,8 @@ import CoreLocation
 
 // 이 클래스에서 Delegate 구현 , 이 클래스를 View에서 감시할 수 있도록 NSObject, ObservableObject 상속
 class WeatherService: NSObject, ObservableObject {
+    static let apiKey = "8296bc6a100ad05993547c61c2abb37f"
+    
     let locationManager: CLLocationManager
     
     // 뷰에서 감시할 수 있는 속성

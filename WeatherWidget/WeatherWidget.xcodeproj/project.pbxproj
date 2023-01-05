@@ -21,6 +21,7 @@
 		7589603829664B8A00E8CD28 /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7589603729664B8A00E8CD28 /* WeatherService.swift */; };
 		7589603A29664D9A00E8CD28 /* WeatherService+Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7589603929664D9A00E8CD28 /* WeatherService+Location.swift */; };
 		7589603C29665E0200E8CD28 /* GangnamStation.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 7589603B29665D4D00E8CD28 /* GangnamStation.gpx */; };
+		7589603E2966620300E8CD28 /* String+WeatherSymbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7589603D2966620300E8CD28 /* String+WeatherSymbol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		7589603729664B8A00E8CD28 /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
 		7589603929664D9A00E8CD28 /* WeatherService+Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WeatherService+Location.swift"; sourceTree = "<group>"; };
 		7589603B29665D4D00E8CD28 /* GangnamStation.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = GangnamStation.gpx; sourceTree = "<group>"; };
+		7589603D2966620300E8CD28 /* String+WeatherSymbol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+WeatherSymbol.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				7589602B29650C6800E8CD28 /* Double+TemperatureString.swift */,
+				7589603D2966620300E8CD28 /* String+WeatherSymbol.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -201,6 +204,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7589603829664B8A00E8CD28 /* WeatherService.swift in Sources */,
+				7589603E2966620300E8CD28 /* String+WeatherSymbol.swift in Sources */,
 				758960322965470300E8CD28 /* WeatherContentView.swift in Sources */,
 				7589603429654A7C00E8CD28 /* CurrentWeatherView.swift in Sources */,
 				75896030296546AF00E8CD28 /* BackgroundView.swift in Sources */,
