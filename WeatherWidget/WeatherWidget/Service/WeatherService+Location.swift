@@ -9,15 +9,15 @@ import Foundation
 import CoreLocation
 
 extension WeatherService: CLLocationManagerDelegate {
-
     
-    func updateAddress(from location: CLLocation) async throws -> String {
+    @MainActor
+    private func updateAddress(from location: CLLocation) async throws -> String {
         let geocoder = CLGeocoder()
         let placemarks = try await geocoder.reverseGeocodeLocation(location, preferredLocale: Locale(identifier: "Ko_kr"))
         
         if let placemark = placemarks.first {
             if let gu = placemark.locality, let dong = placemark.subLocality {
-                return "\(gu)\(dong)"
+                return "\(gu) \(dong)"
             } else {
                 return placemark.name ?? "알 수 없음"
             }
@@ -26,6 +26,14 @@ extension WeatherService: CLLocationManagerDelegate {
         return "알 수 없음"
     }
     
+    private func process(location: CLLocation) {
+        guard !isPreviewService else { return }
+        
+            Task {
+                currentLocation = try await updateAddress(from: location)
+                await fetchWeather(location: location)
+            }
+    }
     
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
         switch manager.authorizationStatus {
@@ -39,15 +47,8 @@ extension WeatherService: CLLocationManagerDelegate {
             lastError = "알 수 없는 오류가 발생했습니다."
         }
     }
-    
-    private func process(location: CLLocation) {
-        guard !isPreviewService else {return}
-        
-        Task {
-            currentLocation = try await updateAddress(from: location)
-            await fetchWeather(location: location)
-        }
-    }
+
+
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.last {
