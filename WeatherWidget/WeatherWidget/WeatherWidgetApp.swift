@@ -8,11 +8,13 @@
 import SwiftUI
 
 @main
-struct WeatherWidgetApp: App {
+struct WeatherWidgetApp: App { 
+    let service = WeatherService()
     var body: some Scene {
         WindowGroup {
             MainView()
                 .preferredColorScheme(.dark)
+                .environmentObject(service) // ???
         }
     }
 }

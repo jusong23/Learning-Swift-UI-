@@ -8,9 +8,11 @@
 import SwiftUI
 
 struct WeatherContentView: View {
+    @EnvironmentObject var service: WeatherService
+    
     var body: some View {
         VStack{
-            Text("강남역")
+            Text(service.currentLocation ?? "")
                 .font(.title2)
                 .foregroundColor(.white)
                 .frame(maxWidth: .infinity)
@@ -41,5 +43,6 @@ struct WeatherContentView_Previews: PreviewProvider {
     static var previews: some View {
         WeatherContentView()
             .preferredColorScheme(.dark)
+            .environmentObject(WeatherService.preview)
     }
 }

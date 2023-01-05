@@ -20,6 +20,7 @@
 		7589603629654AD200E8CD28 /* ForecastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7589603529654AD200E8CD28 /* ForecastView.swift */; };
 		7589603829664B8A00E8CD28 /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7589603729664B8A00E8CD28 /* WeatherService.swift */; };
 		7589603A29664D9A00E8CD28 /* WeatherService+Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7589603929664D9A00E8CD28 /* WeatherService+Location.swift */; };
+		7589603C29665E0200E8CD28 /* GangnamStation.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 7589603B29665D4D00E8CD28 /* GangnamStation.gpx */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		7589603529654AD200E8CD28 /* ForecastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastView.swift; sourceTree = "<group>"; };
 		7589603729664B8A00E8CD28 /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
 		7589603929664D9A00E8CD28 /* WeatherService+Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WeatherService+Location.swift"; sourceTree = "<group>"; };
+		7589603B29665D4D00E8CD28 /* GangnamStation.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = GangnamStation.gpx; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +77,7 @@
 				758960232964FD9200E8CD28 /* Model */,
 				758960152964FAB600E8CD28 /* WeatherWidgetApp.swift */,
 				758960192964FAB800E8CD28 /* Assets.xcassets */,
+				7589603B29665D4D00E8CD28 /* GangnamStation.gpx */,
 				7589601B2964FAB800E8CD28 /* Preview Content */,
 			);
 			path = WeatherWidget;
@@ -185,6 +188,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7589601D2964FAB800E8CD28 /* Preview Assets.xcassets in Resources */,
+				7589603C29665E0200E8CD28 /* GangnamStation.gpx in Resources */,
 				7589601A2964FAB800E8CD28 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -338,7 +342,8 @@
 				DEVELOPMENT_TEAM = 9LAFQ24GSN;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = "날씨위잿";
+				INFOPLIST_KEY_CFBundleDisplayName = "날씨위젯";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "App request Weather Infomation on this location";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -369,7 +374,8 @@
 				DEVELOPMENT_TEAM = 9LAFQ24GSN;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = "날씨위잿";
+				INFOPLIST_KEY_CFBundleDisplayName = "날씨위젯";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "App request Weather Infomation on this location";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
