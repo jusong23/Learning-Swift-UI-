@@ -16,3 +16,4 @@ struct WeatherWidgetApp: App {
         }
     }
 }
+

@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ForecastView: View {
     var body: some View {
+        // Forecast.preview에 있는 것들에 대한 템플릿화
         ForEach(Forecast.preview) { forecast in
             HStack {
                 VStack(alignment: .leading) {
@@ -40,9 +41,11 @@ struct ForecastView: View {
 
 struct ForecastView_Previews: PreviewProvider {
     static var previews: some View {
-        VStack { // 여기서 VStack 왜 ??
+        // Foreach로 템플릿화를 시켜줬기 때문에 ForecastView()가 그 개수만큼 늘어남!
+        // 작동엔 지장 없지만 preview가 늘어난다
+        VStack {
             ForecastView()
+                .preferredColorScheme(.dark)
         }
-            .preferredColorScheme(.dark)
     }
 }
