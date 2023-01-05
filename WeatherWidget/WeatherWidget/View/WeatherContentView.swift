@@ -24,7 +24,7 @@ struct WeatherContentView: View {
                     VStack {
                         Color.clear
                     
-                        CurrentWeatherView(model: .preview)
+                        CurrentWeatherView(model: service.currentWeather)
                      }
                     .frame(height: reader.size.height)
                     // VStack의 높이를 GeometryReader와 동일하게 고정

@@ -9,7 +9,9 @@ import Foundation
 import CoreLocation
 
 extension WeatherService: CLLocationManagerDelegate {
-    private func updateAddress(from location: CLLocation) async throws -> String {
+
+    
+    func updateAddress(from location: CLLocation) async throws -> String {
         let geocoder = CLGeocoder()
         let placemarks = try await geocoder.reverseGeocodeLocation(location, preferredLocale: Locale(identifier: "Ko_kr"))
         
@@ -43,6 +45,7 @@ extension WeatherService: CLLocationManagerDelegate {
         
         Task {
             currentLocation = try await updateAddress(from: location)
+            await fetchWeather(location: location)
         }
     }
     

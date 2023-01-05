@@ -22,6 +22,9 @@
 		7589603A29664D9A00E8CD28 /* WeatherService+Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7589603929664D9A00E8CD28 /* WeatherService+Location.swift */; };
 		7589603C29665E0200E8CD28 /* GangnamStation.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 7589603B29665D4D00E8CD28 /* GangnamStation.gpx */; };
 		7589603E2966620300E8CD28 /* String+WeatherSymbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7589603D2966620300E8CD28 /* String+WeatherSymbol.swift */; };
+		758960432966648700E8CD28 /* CodableCurrentWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758960422966648700E8CD28 /* CodableCurrentWeather.swift */; };
+		758960452966662A00E8CD28 /* WeatherService+Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758960442966662A00E8CD28 /* WeatherService+Api.swift */; };
+		75896047296667AF00E8CD28 /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75896046296667AF00E8CD28 /* ApiError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +44,9 @@
 		7589603929664D9A00E8CD28 /* WeatherService+Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WeatherService+Location.swift"; sourceTree = "<group>"; };
 		7589603B29665D4D00E8CD28 /* GangnamStation.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = GangnamStation.gpx; sourceTree = "<group>"; };
 		7589603D2966620300E8CD28 /* String+WeatherSymbol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+WeatherSymbol.swift"; sourceTree = "<group>"; };
+		758960422966648700E8CD28 /* CodableCurrentWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableCurrentWeather.swift; sourceTree = "<group>"; };
+		758960442966662A00E8CD28 /* WeatherService+Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WeatherService+Api.swift"; sourceTree = "<group>"; };
+		75896046296667AF00E8CD28 /* ApiError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,8 +111,10 @@
 		758960242964FD9800E8CD28 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				758960412966646A00E8CD28 /* Model */,
 				7589603729664B8A00E8CD28 /* WeatherService.swift */,
 				7589603929664D9A00E8CD28 /* WeatherService+Location.swift */,
+				758960442966662A00E8CD28 /* WeatherService+Api.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -130,6 +138,15 @@
 				7589603529654AD200E8CD28 /* ForecastView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		758960412966646A00E8CD28 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				758960422966648700E8CD28 /* CodableCurrentWeather.swift */,
+				75896046296667AF00E8CD28 /* ApiError.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -204,15 +221,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				7589603829664B8A00E8CD28 /* WeatherService.swift in Sources */,
+				758960432966648700E8CD28 /* CodableCurrentWeather.swift in Sources */,
 				7589603E2966620300E8CD28 /* String+WeatherSymbol.swift in Sources */,
 				758960322965470300E8CD28 /* WeatherContentView.swift in Sources */,
 				7589603429654A7C00E8CD28 /* CurrentWeatherView.swift in Sources */,
 				75896030296546AF00E8CD28 /* BackgroundView.swift in Sources */,
 				758960162964FAB600E8CD28 /* WeatherWidgetApp.swift in Sources */,
 				7589602A2965046F00E8CD28 /* CurrentWeather.swift in Sources */,
+				75896047296667AF00E8CD28 /* ApiError.swift in Sources */,
 				7589603629654AD200E8CD28 /* ForecastView.swift in Sources */,
 				7589603A29664D9A00E8CD28 /* WeatherService+Location.swift in Sources */,
 				758960282964FDFA00E8CD28 /* MainView.swift in Sources */,
+				758960452966662A00E8CD28 /* WeatherService+Api.swift in Sources */,
 				7589602C29650C6800E8CD28 /* Double+TemperatureString.swift in Sources */,
 				7589602E29650F4800E8CD28 /* Forecast.swift in Sources */,
 			);
