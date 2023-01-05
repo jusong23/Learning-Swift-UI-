@@ -9,18 +9,29 @@ import Foundation
 import CoreLocation
 
 extension WeatherService {
+    enum ApiType: String {
+        case forecast
+        case weather
+    }
+    
     func fetchWeather(location: CLLocation) async {
         do {
-            let fetchedCurrentWeather = try await fetch(location: location)
+            let fetchedCurrentWeather: CodableCurrentWeather = try await fetch(type: .weather, location: location)
             currentWeather = CurrentWeather(data: fetchedCurrentWeather)
             print(currentWeather)
+            
+            let fetchedForecast: CodableForecast = try await fetch(type: .forecast, location: location)
+            print(fetchedForecast)
+            forecastList = fetchedForecast.list.compactMap {
+                Forecast(data: $0)
+            }
         } catch {
             lastError = "Api 요청 실패"
         }
     }
     
-    private func fetch(location: CLLocation) async throws -> CodableCurrentWeather {
-        var components = URLComponents(string: "https://api.openweathermap.org/data/2.5/weather")
+    private func fetch<ParsingType: Codable>(type: ApiType, location: CLLocation) async throws -> ParsingType {
+        var components = URLComponents(string: "https://api.openweathermap.org/data/2.5/weather\(type.rawValue)")
         
         // url 뒤에 파라미터 추가
         components?.queryItems = [
@@ -46,7 +57,7 @@ extension WeatherService {
         }
         
         let decoder = JSONDecoder()
-        let result = try decoder.decode(CodableCurrentWeather.self, from: data)
+        let result = try decoder.decode(ParsingType.self, from: data)
         
         return result
     }

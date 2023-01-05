@@ -17,7 +17,6 @@ struct Forecast: Identifiable {
     let temperature: String
     let maxTemperature: String
     let minTemperature: String
-    let surise: String
     let forecastedDate: Date
     
 }
@@ -29,8 +28,24 @@ extension Forecast {
         return (0..<10).map {
             let dt = Date.now.addingTimeInterval(TimeInterval($0 * 3600 * 24))
             
-            return Forecast(date: dt.formatted(.dateTime.month().day()), time: dt.formatted(.dateTime.month().minute()), icon: "sun.max.fill", weather: "맑음", temperature: Double.randomTemperatureString, maxTemperature: Double.randomTemperatureString, minTemperature: Double.randomTemperatureString, surise: Double.randomTemperatureString, forecastedDate: .now)
+            return Forecast(date: dt.formatted(.dateTime.month().day()), time: dt.formatted(.dateTime.month().minute()), icon: "sun.max.fill", weather: "맑음", temperature: Double.randomTemperatureString, maxTemperature: Double.randomTemperatureString, minTemperature: Double.randomTemperatureString, forecastedDate: .now)
         }
     }
     // 배열형의 '타입 프로퍼티'를 선언하고 인스턴스를 고정값으로 채워서 리턴
+    
+    init?(data: CodableForecast.ListItem) {
+        let dt = Date(timeIntervalSince1970: TimeInterval(data.dt))
+        date = dt.formatted(.dateTime.month().day())
+        time = dt.formatted(.dateTime.hour().minute())
+        forecastedDate = dt
+        
+        guard let weatherData = data.weather.first else { return nil }
+        
+        icon = weatherData.icon.weatherImageName
+        weather = weatherData.description
+        
+        temperature = data.main.temp.temperatureString
+        minTemperature = data.main.temp_min.temperatureString
+        maxTemperature = data.main.temp_max.temperatureString
+    }
 }
